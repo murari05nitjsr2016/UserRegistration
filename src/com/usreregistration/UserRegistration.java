@@ -21,16 +21,16 @@ public class UserRegistration {
 	static void emailRegistration(String email)
 	{
 		String regex = "^[a-zA-Z0-9]+[._+-]?[a-zA-Z0-9]*@[a-zA-Z0-9]+([.][a-zA-Z]{2,4})([.][a-zA-Z]{2,4})?$";
-				Pattern pattern = Pattern.compile(regex);
-				Matcher matcher = pattern.matcher(email);
-				boolean matchFound = matcher.find();
-				if(matchFound)
-				{
-					System.out.println("Valid email");
-				}
-				else {
-					System.out.println("Invalid email");
-				}
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(email);
+		boolean matchFound = matcher.find();
+		if(matchFound)
+		{
+			System.out.println("Valid email");
+		}
+		else {
+			System.out.println("Invalid email");
+		}
 	}
 	static void mobileNumberValidation(String mobNo)
 	{
@@ -45,7 +45,7 @@ public class UserRegistration {
 		else {
 			System.out.println("Invalid mobile number");
 		}
-		
+
 	}
 	static void passwordValidation(String pwd)
 	{
@@ -60,15 +60,15 @@ public class UserRegistration {
 		else {
 			System.out.println("Invalid password");
 		}
-		
+
 	}
 
 
 	public static void main(String[] args) {
 
-		
-		 Scanner sc = new Scanner(System.in);
-		 /*
+
+		Scanner sc = new Scanner(System.in);
+
 		System.out.println("Enter the first Name: ");
 		String fName = sc.next();
 		System.out.println("Enter last name ");
@@ -87,15 +87,15 @@ public class UserRegistration {
 		System.out.println("enter your email  ");
 		String email = sc.next();
 		emailRegistration(email);
-*/
+
 		System.out.println("Enter your mobile no :");
 		String mobNo = sc.next();
 		mobileNumberValidation(mobNo);
 		System.out.println("enter your password  ");
 		String pwd = sc.next();
 		passwordValidation(pwd);
-		
-		
+
+
 
 
 
