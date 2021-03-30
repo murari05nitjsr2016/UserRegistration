@@ -34,7 +34,7 @@ public class UserRegistration {
 	}
 	static void mobileNumberValidation(String mobNo)
 	{
-		String regex = ("^[1-9]{2}[?][6-9]{1}[0-9]{9}$");
+		String regex = ("^[1-9]{2}[\\s][6-9]{1}[0-9]{9}$");
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(mobNo);
 		boolean matchFound = matcher.find();
@@ -44,6 +44,21 @@ public class UserRegistration {
 		}
 		else {
 			System.out.println("Invalid mobile number");
+		}
+		
+	}
+	static void passwordValidation(String pwd)
+	{
+		String regex = "^(?=.*[0-9])(?=.*[!@#$%^&*|'<>.-^*()%!])(?=.*[A-Z])[^\\s]{8,}$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(pwd);
+		boolean matchFound = matcher.find();
+		if(matchFound)
+		{
+			System.out.println("Valid passwors");
+		}
+		else {
+			System.out.println("Invalid password");
 		}
 		
 	}
@@ -76,6 +91,10 @@ public class UserRegistration {
 		System.out.println("Enter your mobile no :");
 		String mobNo = sc.next();
 		mobileNumberValidation(mobNo);
+		System.out.println("enter your password  ");
+		String pwd = sc.next();
+		passwordValidation(pwd);
+		
 		
 
 
