@@ -18,6 +18,20 @@ public class UserRegistration {
 		}
 
 	}
+	static void emailRegistration(String email)
+	{
+		String regex = "^[a-zA-Z0-9]+[._+-]?[a-zA-Z0-9]*@[a-zA-Z0-9]+([.][a-zA-Z]{2,4})([.][a-zA-Z]{2,4})?$";
+				Pattern pattern = Pattern.compile(regex);
+				Matcher matcher = pattern.matcher(email);
+				boolean matchFound = matcher.find();
+				if(matchFound)
+				{
+					System.out.println("Valid email");
+				}
+				else {
+					System.out.println("Invalid email");
+				}
+	}
 
 
 	public static void main(String[] args) {
@@ -38,6 +52,9 @@ public class UserRegistration {
 			System.out.println("Match not Found");
 		}
 		validationLastName(lname);
+		System.out.println("enter your email  ");
+		String email = sc.next();
+		emailRegistration(email);
 
 
 
