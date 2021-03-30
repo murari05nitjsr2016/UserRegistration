@@ -32,11 +32,28 @@ public class UserRegistration {
 					System.out.println("Invalid email");
 				}
 	}
+	static void mobileNumberValidation(String mobNo)
+	{
+		String regex = ("^[1-9]{2}[?][6-9]{1}[0-9]{9}$");
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(mobNo);
+		boolean matchFound = matcher.find();
+		if(matchFound)
+		{
+			System.out.println("Valid mobile number");
+		}
+		else {
+			System.out.println("Invalid mobile number");
+		}
+		
+	}
 
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
+		
+		 Scanner sc = new Scanner(System.in);
+		 /*
 		System.out.println("Enter the first Name: ");
 		String fName = sc.next();
 		System.out.println("Enter last name ");
@@ -55,6 +72,11 @@ public class UserRegistration {
 		System.out.println("enter your email  ");
 		String email = sc.next();
 		emailRegistration(email);
+*/
+		System.out.println("Enter your mobile no :");
+		String mobNo = sc.next();
+		mobileNumberValidation(mobNo);
+		
 
 
 
